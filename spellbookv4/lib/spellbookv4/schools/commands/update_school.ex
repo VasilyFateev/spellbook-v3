@@ -4,7 +4,7 @@ defmodule Spellbookv4.Schools.Commands.UpdateSchool do
 
   def process(%School{} = school, attrs) do
     school
-    |> School.update_changeset(attrs)
+    |> School.changeset(attrs)
     |> Repo.update()
   end
 end

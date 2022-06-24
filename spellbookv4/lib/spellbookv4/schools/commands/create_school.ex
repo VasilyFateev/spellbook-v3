@@ -4,7 +4,7 @@ defmodule Spellbookv4.Schools.Commands.CreateSchool do
 
   def process(attrs) do
     %School{}
-    |> School.create_changeset(attrs)
+    |> School.changeset(attrs)
     |> Repo.insert()
   end
 end

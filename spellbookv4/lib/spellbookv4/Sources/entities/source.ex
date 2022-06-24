@@ -1,4 +1,4 @@
-defmodule Spellbookv4.Schools.Entities.School do
+defmodule Spellbookv4.Sources.Entities.Source do
   #alias Spellbookv4.Spells.Entities.Spell
   use Ecto.Schema
 
@@ -6,7 +6,7 @@ defmodule Spellbookv4.Schools.Entities.School do
 
   @required [:name]
 
-  schema "schools" do
+  schema "sources" do
     field :name, :string
 
     #has_many :spells, Spell
@@ -14,10 +14,11 @@ defmodule Spellbookv4.Schools.Entities.School do
     timestamps()
   end
 
-  def changeset(%__MODULE__{} = school, attrs) do
-    school
+  def changeset(%__MODULE__{} = source, attrs) do
+    source
     |> cast(attrs, @required)
     |> validate_format(:name, ~r/^[a-zA-Z]*$/, message: "Invalid input format.")
-    |> unique_constraint(:school, message: "Such a school has already been added.")
+    |> unique_constraint(:source, message: "Such a source has already been added.")
   end
+
 end
