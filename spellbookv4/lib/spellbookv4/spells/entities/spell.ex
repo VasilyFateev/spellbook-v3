@@ -1,6 +1,7 @@
 defmodule Spellbookv4.Spells.Entities.Spell do
   alias Spellbookv4.Schools.Entities.School
   alias Spellbookv4.Sources.Entities.Source
+  alias Spellbookv4.Users.Entities.User
   use Ecto.Schema
 
   import Ecto.Changeset
@@ -18,6 +19,8 @@ defmodule Spellbookv4.Spells.Entities.Spell do
 
     belongs_to :school_id, School
     belongs_to :source_id, Source
+
+    many_to_many :users, User, join_through: "user_spellbooks"
 
     timestamps()
   end

@@ -5,4 +5,9 @@ defmodule Spellbookv4.Spells.Queries.GetListSpells do
   def process do
     Repo.all(Spell)
   end
+
+  def process(params) do
+    Spell
+    |> Repo.paginate(params)
+  end
 end
