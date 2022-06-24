@@ -1,5 +1,5 @@
 defmodule Spellbookv4.Sources.Entities.Source do
-  #alias Spellbookv4.Spells.Entities.Spell
+  alias Spellbookv4.Spells.Entities.Spell
   use Ecto.Schema
 
   import Ecto.Changeset
@@ -9,7 +9,7 @@ defmodule Spellbookv4.Sources.Entities.Source do
   schema "sources" do
     field :name, :string
 
-    #has_many :spells, Spell
+    has_many :spells, Spell
 
     timestamps()
   end
