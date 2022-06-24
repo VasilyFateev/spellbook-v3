@@ -1,11 +1,11 @@
 import Config
 
 # Configure your database
-config :spellbook, Spellbook.Repo,
+config :spellbookv4, Spellbookv4.Repo,
   username: "drovosek",
   password: "123",
   hostname: "localhost",
-  database: "spellbook_dev",
+  database: "spellbookv4_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -16,14 +16,14 @@ config :spellbook, Spellbook.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with esbuild to bundle .js and .css sources.
-config :spellbook, SpellbookWeb.Endpoint,
+config :spellbookv4, Spellbookv4Web.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}, port: 4000],
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "nz13DuTDYNisZe1vDbqyoxpvKE/hBG4KDZ7wFomE/v1B7FqgtURMd9Bu48kjNAem",
+  secret_key_base: "wUqI6REtLmVogkRVws6aSI0Vg4XCFAcj7UmH3MNrkVjFvrqE3i2ETAXTwkFKzyfT",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
@@ -54,13 +54,13 @@ config :spellbook, SpellbookWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :spellbook, SpellbookWeb.Endpoint,
+config :spellbookv4, Spellbookv4Web.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/spellbook_web/(live|views)/.*(ex)$",
-      ~r"lib/spellbook_web/templates/.*(eex)$"
+      ~r"lib/spellbookv4_web/(live|views)/.*(ex)$",
+      ~r"lib/spellbookv4_web/templates/.*(eex)$"
     ]
   ]
 
