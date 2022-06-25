@@ -19,5 +19,4 @@ defmodule Spellbookv4.Repo.Migrations.CreateSpell do
 
     create unique_index(:spells, [:name])
   end
-  end
 end

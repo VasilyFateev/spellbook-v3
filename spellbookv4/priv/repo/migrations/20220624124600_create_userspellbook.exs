@@ -9,7 +9,6 @@ defmodule Spellbookv4.Repo.Migrations.CreateUserSpellbook do
       timestamps()
     end
 
-    create unique_index(:user_spellbooks, [:name, :spells])
-  end
+    create unique_index(:user_spellbooks, [:user_id, :spell_id])
   end
 end

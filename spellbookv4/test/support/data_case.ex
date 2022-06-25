@@ -24,6 +24,7 @@ defmodule Spellbookv4.DataCase do
       import Ecto.Changeset
       import Ecto.Query
       import Spellbookv4.DataCase
+      import Spellbookv4.Factories
     end
   end
 

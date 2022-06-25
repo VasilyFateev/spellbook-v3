@@ -20,5 +20,4 @@ defmodule Spellbookv4.Sources.Entities.Source do
     |> validate_format(:name, ~r/^[a-zA-Z]*$/, message: "Invalid input format.")
     |> unique_constraint(:source, message: "Such a source has already been added.")
   end
-
 end

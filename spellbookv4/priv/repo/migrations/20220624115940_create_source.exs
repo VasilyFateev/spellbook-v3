@@ -10,5 +10,4 @@ defmodule Spellbookv4.Repo.Migrations.CreateSource do
 
     create unique_index(:sources, [:name])
   end
-  end
 end

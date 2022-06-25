@@ -12,5 +12,4 @@ defmodule Spellbookv4.Repo.Migrations.CreateUser do
 
     create unique_index(:users, [:email])
   end
-  end
 end

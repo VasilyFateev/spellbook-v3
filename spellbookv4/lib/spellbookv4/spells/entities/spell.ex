@@ -20,7 +20,7 @@ defmodule Spellbookv4.Spells.Entities.Spell do
     belongs_to :school_id, School
     belongs_to :source_id, Source
 
-    many_to_many :users, User, join_through: "user_spellbooks"
+    many_to_many :users, User, join_through: Spellbookv4.Relation.SpellsToUser
 
     timestamps()
   end
@@ -34,12 +34,13 @@ defmodule Spellbookv4.Spells.Entities.Spell do
     |> validate_format(:components, ~r/^[a-zA-Z]*$/, message: "Invalid input format.")
     |> validate_format(:duration, ~r/^[a-zA-Z]*$/, message: "Invalid input format.")
     |> validate_format(:description, ~r/^[a-zA-Z]*$/, message: "Invalid input format.")
-
-    |> validate_number(:level, greater_than: 0, less_than: 9, message: "Invalid input format.")
-
+    |> validate_number(:level,
+      greater_than: 0,
+      less_than: 9,
+      message: "Acceptable magic circles - [0-9]"
+    )
     |> assoc_constraint(:school_id)
     |> assoc_constraint(:source_id)
-
     |> unique_constraint(:school, message: "Such a school has already been added.")
   end
 end
